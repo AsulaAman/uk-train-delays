@@ -1,0 +1,17 @@
+[2025-05-23T22:10:04.550+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: cancellations_etl_dag.extract_data manual__2025-05-23T22:10:02.997538+00:00 [queued]>
+[2025-05-23T22:10:04.555+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: cancellations_etl_dag.extract_data manual__2025-05-23T22:10:02.997538+00:00 [queued]>
+[2025-05-23T22:10:04.555+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-05-23T22:10:04.562+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): extract_data> on 2025-05-23 22:10:02.997538+00:00
+[2025-05-23T22:10:04.566+0000] {standard_task_runner.py:57} INFO - Started process 208 to run task
+[2025-05-23T22:10:04.568+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'cancellations_etl_dag', 'extract_data', 'manual__2025-05-23T22:10:02.997538+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/cancellations_etl_dag.py', '--cfg-path', '/tmp/tmpprtvmo47']
+[2025-05-23T22:10:04.571+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask extract_data
+[2025-05-23T22:10:04.583+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-23T22:10:04.609+0000] {task_command.py:415} INFO - Running <TaskInstance: cancellations_etl_dag.extract_data manual__2025-05-23T22:10:02.997538+00:00 [running]> on host b5b9d485c58a
+[2025-05-23T22:10:04.797+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='cancellations_etl_dag' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-23T22:10:02.997538+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-23T22:10:02.997538+00:00'
+[2025-05-23T22:10:04.798+0000] {logging_mixin.py:151} INFO - File data/raw/train_delays.csv already exists. Skipping download.
+[2025-05-23T22:10:04.799+0000] {logging_mixin.py:151} INFO - File data/raw/cancellations.csv already exists. Skipping download.
+[2025-05-23T22:10:04.800+0000] {logging_mixin.py:151} INFO - File data/raw/punctuality.csv already exists. Skipping download.
+[2025-05-23T22:10:04.800+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-05-23T22:10:04.807+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=cancellations_etl_dag, task_id=extract_data, execution_date=20250523T221002, start_date=20250523T221004, end_date=20250523T221004
+[2025-05-23T22:10:04.838+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-23T22:10:04.849+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

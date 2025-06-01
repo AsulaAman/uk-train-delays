@@ -1,0 +1,26 @@
+operator,financial_period,number_of_stops,on_time_percentage
+Great Britain,2022-23 Period 01,6129910,74.1
+Avanti West Coast,2022-23 Period 01,43548,47.6
+c2c,2022-23 Period 01,113260,85.1
+Caledonian Sleeper,2022-23 Period 01,1358,76.1
+Chiltern Railways,2022-23 Period 01,79668,78.4
+CrossCountry,2022-23 Period 01,64980,61.9
+East Midlands Railway,2022-23 Period 01,110151,58.5
+Elizabeth line,2022-23 Period 01,190767,87.6
+Govia Thameslink Railway,2022-23 Period 01,907054,74.6
+Grand Central,2022-23 Period 01,3974,54.7
+Great Western Railway,2022-23 Period 01,345120,71.5
+Greater Anglia,2022-23 Period 01,262376,89.3
+Heathrow Express,2022-23 Period 01,12274,81.8
+Hull Trains,2022-23 Period 01,3103,68.1
+London North Eastern Railway,2022-23 Period 01,35828,68.2
+London Overground,2022-23 Period 01,672549,80.6
+Lumo,2022-23 Period 01,1198,65.3
+Merseyrail,2022-23 Period 01,262436,76.9
+Northern Trains,2022-23 Period 01,674640,65.9
+ScotRail,2022-23 Period 01,587722,76.0
+South Western Railway,2022-23 Period 01,551625,76.2
+Southeastern,2022-23 Period 01,558639,76.1
+TfW Rail,2022-23 Period 01,253141,61.3
+TransPennine Express,2022-23 Period 01,55708,59.4
+West Midlands Trains,2022-23 Period 01,338791,65.6

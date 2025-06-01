@@ -1,0 +1,57 @@
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: asulaaman
+      POSTGRES_PASSWORD: project2025
+      POSTGRES_DB: uk_trains
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    restart: always
+
+  airflow-webserver:
+    image: apache/airflow:2.7.1
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://asulaaman:project2025@postgres/uk_trains
+      AIRFLOW__CORE__FERNET_KEY: 'PQ_2-mfGnUKo3_Xza9WU8MeYFuj5SwhV7trRtNAGNZA='
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+      AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
+    volumes:
+      - /Users/asulaaman/uk-train-delays/dags:/opt/airflow/dags
+      - /Users/asulaaman/uk-train-delays/scripts:/opt/airflow/scripts
+      - /Users/asulaaman/uk-train-delays/data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    ports:
+      - "8080:8080"
+    command: webserver
+    restart: always
+
+  airflow-scheduler:
+    image: apache/airflow:2.7.1
+    depends_on:
+      - airflow-webserver
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://asulaaman:project2025@postgres/uk_trains
+      AIRFLOW__CORE__FERNET_KEY: 'PQ_2-mfGnUKo3_Xza9WU8MeYFuj5SwhV7trRtNAGNZA='
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'False'
+    volumes:
+      - /Users/asulaaman/uk-train-delays/dags:/opt/airflow/dags
+      - /Users/asulaaman/uk-train-delays/scripts:/opt/airflow/scripts
+      - /Users/asulaaman/uk-train-delays/data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+    command: scheduler
+    restart: always
+
+volumes:
+  postgres_data:
+  airflow_logs:
+  airflow_plugins:

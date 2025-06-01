@@ -1,0 +1,16 @@
+[2025-05-23T22:31:28.532+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: train_delays_dag.transform_data manual__2025-05-23T22:31:26.191563+00:00 [queued]>
+[2025-05-23T22:31:28.536+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: train_delays_dag.transform_data manual__2025-05-23T22:31:26.191563+00:00 [queued]>
+[2025-05-23T22:31:28.536+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2025-05-23T22:31:28.610+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): transform_data> on 2025-05-23 22:31:26.191563+00:00
+[2025-05-23T22:31:28.613+0000] {standard_task_runner.py:57} INFO - Started process 568 to run task
+[2025-05-23T22:31:28.616+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'train_delays_dag', 'transform_data', 'manual__2025-05-23T22:31:26.191563+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/train_delays_dag.py', '--cfg-path', '/tmp/tmpnx72e2cl']
+[2025-05-23T22:31:28.617+0000] {standard_task_runner.py:85} INFO - Job 35: Subtask transform_data
+[2025-05-23T22:31:28.628+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-05-23T22:31:28.651+0000] {task_command.py:415} INFO - Running <TaskInstance: train_delays_dag.transform_data manual__2025-05-23T22:31:26.191563+00:00 [running]> on host 8ac5b706b4e9
+[2025-05-23T22:31:28.697+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='train_delays_dag' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-23T22:31:26.191563+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-23T22:31:26.191563+00:00'
+[2025-05-23T22:31:28.698+0000] {logging_mixin.py:151} INFO - Processing file: data/raw/train_delays.csv...
+[2025-05-23T22:31:28.714+0000] {logging_mixin.py:151} INFO - Cleaned train delays data saved to data/processed/train_delays_cleaned.csv
+[2025-05-23T22:31:28.714+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-05-23T22:31:28.721+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=train_delays_dag, task_id=transform_data, execution_date=20250523T223126, start_date=20250523T223128, end_date=20250523T223128
+[2025-05-23T22:31:28.756+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-23T22:31:28.769+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

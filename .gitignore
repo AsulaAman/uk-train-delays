@@ -1,0 +1,10 @@
+.DS_Store
+.vscode/
+__pycache__/
+*.pyc
+venv/
+.env/
+logs/
+airflow/logs/
+data/posttgres/
+scripts/scripts/
